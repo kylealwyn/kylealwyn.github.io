@@ -5,18 +5,21 @@ $color-gray-mid: #6D7C8B;
 
 @font-face {
   font-family: 'Circular';
+  font-display: auto;
   src: url('../assets/fonts/circular-book.woff') format('woff');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Circular';
+  font-display: auto;
   src: url('../assets/fonts/circular-bold.woff') format('woff');
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Circular';
+  font-display: auto;
   src: url('../assets/fonts/circular-light.woff') format('woff');
   font-weight: 300;
 }
