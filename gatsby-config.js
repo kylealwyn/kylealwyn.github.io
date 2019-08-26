@@ -73,6 +73,7 @@ module.exports = {
         orientation: 'portrait',
         theme_color: '#e64c67',
         background_color: '#e64c67',
+        icon: './static/favicon.png',
       },
     },
     `gatsby-plugin-offline`,

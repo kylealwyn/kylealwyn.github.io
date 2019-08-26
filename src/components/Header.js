@@ -7,7 +7,7 @@ export default function Header() {
     <header className="container app-header">
       <div className="d-flex align-items-center">
         <Link to="/">
-          <img src={sig} style={{ width: 50 }} />
+          <img src={sig} style={{ width: 45 }} />
         </Link>
         <div className="ml-auto">
           <ul className="list-unstyled d-flex">
