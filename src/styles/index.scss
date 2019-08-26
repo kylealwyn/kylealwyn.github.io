@@ -1,0 +1,129 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/utilities/text';
+
+.container .container-narrow {
+  padding: 0;
+}
+
+.container-narrow {
+  @extend .container;
+  max-width: 767px;
+}
+
+body {
+  font-family: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 0;
+  margin: 0;
+  color: $color-body-font;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0;
+}
+
+h1 + p {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+}
+
+h2 {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 60px;
+    bottom: -6px;
+    left: -6px;
+    background: $color-primary;
+  }
+}
+
+h3 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: underline;
+  font-weight: 700;
+
+  &:hover {
+    color: darken($color-primary, 5);
+  }
+}
+
+@import 'layout';
+@import 'home';
+@import 'post';
+@import 'header';
+
+.master-list {
+  @extend .list-unstyled;
+
+  &item {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 -0.5rem 1rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+      background: #fafafa;
+    }
+  }
+
+  &item-date {
+    color: $color-gray-mid;
+    font-weight: 300;
+  }
+
+  &item-title {
+    margin: 0;
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &item-arrow {
+    position: absolute;
+    right: 4px;
+    top: calc(50% - 12px);
+    fill: $color-gray-mid;
+  }
+}
+
+.gatsby-highlight code {
+  font-size: 14px !important;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

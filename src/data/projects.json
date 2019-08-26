@@ -1,0 +1,70 @@
+[
+	{
+		"title": "apollo-typescript-starter",
+		"url": "https://github.com/kylealwyn/apollo-typescript-starter",
+		"description": "GraphQL boilerplate with Postgres data layer, written in Typescript"
+	},
+	{
+		"title": "express-marshal",
+		"url": "https://github.com/kylealwyn/express-marshal",
+		"description": "Decorators for building express.js controllers",
+		"tags": [
+			"Javascript",
+			"Node"
+		]
+	},
+	{
+		"title": "node-rest-api-boilerplate",
+		"url": "https://github.com/kylealwyn/node-api-es6-boilerplate",
+		"description": "Restful API Boilerplate with MongoDB data layer",
+		"tags": [
+			"Javascript",
+			"Node"
+		]
+	},
+	{
+		"title": "stox-cli",
+		"url": "https://github.com/kylealwyn/stox-cli",
+		"description": "CLI to query company stock ticker information",
+		"tags": [
+			"Javascript",
+			"Node"
+		]
+	},
+	{
+		"title": "flexxed",
+		"url": "https://kylealwyn.com/flexxed",
+		"description": "An easy-to-use CSS grid library based on the Flexbox spec",
+		"tags": [
+			"CSS",
+			"Flexbox"
+		]
+	},
+	{
+		"title": "pomodoro",
+		"url": "https://kylealwyn.com/pomodoro",
+		"description": "A javascript timer implementing the Pomodoro method",
+		"tags": [
+			"Javascript",
+			"Productivity"
+		]
+	},
+	{
+		"title": "react-soundcloud",
+		"url": "https://kylealwyn.com/react-soundcloud",
+		"description": "Soundcloud & React.js",
+		"tags": [
+			"Javascript",
+			"React",
+			"API"
+		]
+	},
+	{
+		"title": "how-far",
+		"url": "https://kylealwyn.com/how-far",
+		"description": "Scroll progress for containers",
+		"tags": [
+			"Javascript"
+		]
+	}
+]

@@ -1,0 +1,79 @@
+.home-hero {
+  margin: 3rem 0 2rem;
+}
+
+.home-title {
+  margin-bottom: 0rem;
+}
+
+.home-subtitle {
+  margin: 0 0 0.5rem;
+}
+
+.home-description {
+  color: $color-body-font;
+  font-size: 1.15rem;
+
+  span {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.showcase-list {
+  margin-top: 1rem;
+  &-title {
+    display: inline-block;
+    background: black;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    font-size: 20px;
+  }
+
+  &-showmore {
+    margin-left: auto;
+  }
+
+  &item {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    border-radius: 0.25rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    margin: 0 -0.5rem 0.5rem;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+      background: #fafafa;
+    }
+  }
+
+  &item-name {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &item-desc {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 300;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  &item-arrow {
+    position: absolute;
+    right: 4px;
+    top: calc(50% - 12px);
+    fill: $color-gray-mid;
+  }
+}

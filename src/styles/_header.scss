@@ -1,0 +1,12 @@
+.app-header {
+  padding: 1rem;
+
+  a {
+    color: #444;
+    text-decoration: none;
+
+    &:hover {
+      color: #222;
+    }
+  }
+}

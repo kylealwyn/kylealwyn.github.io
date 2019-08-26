@@ -1,52 +1,70 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import projects from '../data/projects.json';
+import Layout from '../components/Layout';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+const DynamicLink = ({ url, ...props }) =>
+  /^https?:\/\//.test(url) ? <a href={url} {...props} /> : <Link to={url} {...props} />;
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+const ItemList = ({ title, to, items, linkProps = {} }) => (
+  <div className="showcase-list">
+    <h3 className="showcase-list-title">{title}</h3>
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
-      </Layout>
-    )
-  }
+    {items.slice(0, 3).map(item => (
+      <DynamicLink key={item.url} className="showcase-listitem" url={item.url} {...linkProps}>
+        <h3 className="showcase-listitem-name">{item.title}</h3>
+        <p className="showcase-listitem-desc">{item.description}</p>
+      </DynamicLink>
+    ))}
+
+    <Link className="showcase-list-showmore" to={to}>
+      See More
+    </Link>
+  </div>
+);
+
+export default function HomePage({ data, location }) {
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <div className="container">
+        <div className="home-hero">
+          <h1 className="home-title">Hey, I&apos;m Kyle </h1>
+
+          <p className="home-subtitle">I live at the intersection of science, art, and business.</p>
+          <p className="home-description">
+            Co-founder <a href="https://www.heydoctor.com">@HeyDoctor</a>. Code&nbsp;
+            <a href="https://github.com/kylealwyn">@GitHub</a>. Network&nbsp;
+            <a href="https://linkedin.com/in/kylealwyn">@LinkedIn</a>.
+          </p>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-6">
+            <ItemList
+              title="Latest Posts"
+              to="/blog"
+              items={posts.map(({ node: { frontmatter: post } }) => ({
+                ...post,
+                url: `/blog/${post.slug}`,
+              }))}
+            />
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <ItemList
+              title="Latest Projects"
+              to="/projects"
+              items={projects}
+              linkProps={{ rel: 'noopener noreferrer', target: '_blank' }}
+            />
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
 }
-
-export default BlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -59,10 +77,8 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
-          fields {
-            slug
-          }
           frontmatter {
+            slug
             date(formatString: "MMMM DD, YYYY")
             title
             description
@@ -71,4 +87,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
