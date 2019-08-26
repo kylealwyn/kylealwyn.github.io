@@ -1,8 +1,11 @@
+const siteDescription =
+  'Kyle Alwyn is a full stack javascript developer and immersive experience designer based in San Francisco, California.';
+
 module.exports = {
   siteMetadata: {
     title: 'Kyle Alwyn',
     author: `Kyle Alwyn`,
-    description: `Kyle Alwyn's musings about startups and code.`,
+    description: siteDescription,
     siteUrl: `https://kylealwyn.com`,
     social: {
       twitter: `kjalwyn`,
@@ -52,19 +55,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: 'UA-66504866-1',
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        lang: 'en',
+        dir: 'ltr',
+        name: 'Kyle Alwyn',
+        short_name: 'Kyle Alwyn',
+        description: siteDescription,
+        scope: '/',
+        display: 'fullscreen',
+        orientation: 'portrait',
+        theme_color: '#e64c67',
+        background_color: '#e64c67',
       },
     },
     `gatsby-plugin-offline`,

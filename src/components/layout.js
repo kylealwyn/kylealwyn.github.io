@@ -27,7 +27,6 @@ export default function Layout({ children, title, description, lang = 'en', meta
           lang,
         }}
         title={title}
-        titleTemplate={`%s | ${site.siteMetadata.title}`}
         meta={[
           {
             name: `description`,
@@ -72,12 +71,8 @@ export default function Layout({ children, title, description, lang = 'en', meta
           )
           .concat(meta)}
       />
-      <div className="layout-outer">
-        <div className="layout-inner">
-          <Header />
-          {children}
-        </div>
-      </div>
+      <Header />
+      <main>{children}</main>
     </>
   );
 }
