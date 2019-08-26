@@ -1,0 +1,12 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "name": "Kyle Alwyn",
+  "description": "Kyle Alwyn is a full stack javascript developer and immersive experience designer based in San Francisco, California.",
+  "short_name": "Kyle Alwyn",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#e64c67",
+  "background_color": "#e64c67"
+}

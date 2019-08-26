@@ -1,0 +1,1 @@
+{"errors":[{"message":"Variable \"$slug\" of non-null type \"String!\" must not be null.","locations":[{"line":2,"column":3}]}],"pageContext":{"isCreatedByStatefulCreatePages":false,"slug":null,"previous":{"frontmatter":{"slug":"the-business-plan","title":"The Business Plan"}},"next":{"frontmatter":{"slug":null,"title":"How To Setup Github Pages"}}}}

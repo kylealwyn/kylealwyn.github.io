@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kyle Alwyn]]></title><description><![CDATA[Kyle Alwyn is a full stack javascript developer and immersive experience designer based in San Francisco, California.]]></description><link>https://kylealwyn.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 26 Aug 2019 02:18:14 GMT</lastBuildDate><item><title><![CDATA[How To Setup Github Pages]]></title><description><![CDATA[Overview The documentation is a little confusing when it comes to project pages, as opposed to user pages. It feels like you should have to…]]></description><link>https://kylealwyn.com/2018-01-10-how-to-setup-github-pages/</link><guid isPermaLink="false">https://kylealwyn.com/2018-01-10-how-to-setup-github-pages/</guid><pubDate>Wed, 10 Jan 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The documentation is a little confusing when it comes to project pages, as opposed to user pages. It feels like you should have to do more, but actually the process is very easy.&lt;/p&gt;
+&lt;p&gt;It involves:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting up 2 static A records for the naked (no www) domain.&lt;/li&gt;
+&lt;li&gt;Creating one CNAME record for www which will point to a GitHub URL. This will handle www redirection for you.&lt;/li&gt;
+&lt;li&gt;Creating a file called CNAME (capitalised) in your project root in your site repository. This will tell Github what URL to respond to.&lt;/li&gt;
+&lt;li&gt;Wait for everything to propagate.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What You Get&lt;/h2&gt;
+&lt;p&gt;Your content will be served from a URL of the form &lt;code class=&quot;language-text&quot;&gt;http://kylealwyn.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Visiting &lt;a href=&quot;http://www.kylealwyn.com&quot;&gt;http://www.kylealwyn.com&lt;/a&gt; will return a 301 redirect to the naked domain. The path will be respected by the redirect, so traffic to &lt;a href=&quot;http://www.kylealwyn.com/pomodoro&quot;&gt;http://www.kylealwyn.com/pomodoro&lt;/a&gt; will be redirected to &lt;a href=&quot;http://www.kylealwyn.com/pomodoro&quot;&gt;http://kylealwyn.com/pomodoro&lt;/a&gt;. You can have one project page per repository, so if your repos are open, you can have as many as you like.&lt;/p&gt;
+&lt;h2&gt;The Process&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. Create your site github repository&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Github will, by default, serve your website if you setup a a repository named githubusername.github.io. Github username is, you guessed it your github username. My github username is kylealwyn, so I created a respository dubbed &lt;a href=&quot;https://github.com/kylealwyn/kylealwyn.github.io&quot;&gt;kylealwyn.github.io&lt;/a&gt;. This site’s code is hosted in the master branch of that repository. All you need to test your new Github-powered website is an index.html file.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Create a CNAME file&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Add a file called CNAME to the root of your new repository. This should contain the domain you want to serve and nothing more. No http:// and no www. Make sure you commit and push.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;kylealwyn.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;3. Create A records&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This step and the next will require you to login to your domain name provider. For the A records, point @ to the following ip addresses:&lt;/p&gt;
+&lt;p&gt;@: 192.30.252.154&lt;/p&gt;
+&lt;p&gt;@: 192.30.252.153&lt;/p&gt;
+&lt;p&gt;These are the static Github IP addresses from which your content will be served.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. Create a CNAME Record&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For the CNAME record, point www to githubusername.github.io. Note the trailing period. Also note that this is your github username. You don’t need to specify the project name yet. Github will use the CNAME file to determine which project to serve content from.&lt;/p&gt;
+&lt;p&gt;e.g.&lt;/p&gt;
+&lt;p&gt;www: kylealwyn.github.io.&lt;/p&gt;
+&lt;p&gt;The purpose of the CNAME is to redirect all www subdomain traffic to a GitHub page which will 301 redirect to the naked domain. This file tells GitHub to use this repo to handle traffic to this domain.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. Wait&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now wait 5 minutes, possibly even longer in some cases, and your project page should now be live.&lt;/p&gt;
+&lt;h2&gt;Done!&lt;/h2&gt;
+&lt;p&gt;Your website should now be available at the domain you configured. Please feel free to shoot me an email or leave me a comment if this did not make sense or you need any extra help. Cheers!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Benjamin Franklin's 13 Virtues]]></title><description><![CDATA[Not only was Benjamin Franklin a brilliant scientist, but also an avid philosopher and businessman. Check out his  Wikipedia page  to view…]]></description><link>https://kylealwyn.com/2016-12-12-benjamin-franklins-13-virtues/</link><guid isPermaLink="false">https://kylealwyn.com/2016-12-12-benjamin-franklins-13-virtues/</guid><pubDate>Mon, 12 Dec 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Not only was Benjamin Franklin a brilliant scientist, but also an avid philosopher and businessman. Check out his &lt;a href=&quot;https://en.wikipedia.org/wiki/Benjamin_Franklin&quot;&gt;Wikipedia page&lt;/a&gt; to view the full list of his titles. As a pioneer and thought leader of his time, he came up with a list of virtues that he attempted to abide by in his daily living. I’ve copied them here for my own regular reminder to distill only the matterful in this age of information overload and excess.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Temperance&lt;/strong&gt;. Eat not to dullness; drink not to elevation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Silence&lt;/strong&gt;. Speak not but what may benefit others or yourself; avoid trifling conversation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Order&lt;/strong&gt;. Let all your things have their places; let each part of your business have its time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt;. Resolve to perform what you ought; perform without fail what you resolve.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Frugality&lt;/strong&gt;. Make no expense but to do good to others or yourself; i.e., waste nothing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Industry&lt;/strong&gt;. Lose no time; be always employ’d in something useful; cut off all unnecessary actions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sincerity&lt;/strong&gt;. Use no hurtful deceit; think innocently and justly, and, if you speak, speak accordingly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Justice&lt;/strong&gt;. Wrong none by doing injuries, or omitting the benefits that are your duty.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Moderation&lt;/strong&gt;. Avoid extremes; forbear resenting injuries so much as you think they deserve.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cleanliness&lt;/strong&gt;. Tolerate no uncleanliness in body, cloaths, or habitation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tranquillity&lt;/strong&gt;. Be not disturbed at trifles, or at accidents common or unavoidable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chastity&lt;/strong&gt;. Rarely use venery but for health or offspring, never to dullness, weakness, or the injury of your own or another’s peace or reputation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Humility&lt;/strong&gt;. Imitate Jesus and Socrates.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;These thirteen virtues were Franklin’s own personal commandments, whose worth has proven to be unaffected by the progression of time. They are common directives I aim to implement in my life in my active pursuit of simplicity and happiness. Cheers!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Writing Pure Functions in Javascript]]></title><description><![CDATA[I’ve been perusing through Robert C. Martin’s book,  Clean Code  and I wanted to document my takeaways from the chapter on functions…]]></description><link>https://kylealwyn.com/2016-09-09-writing-pure-functions-javascript/</link><guid isPermaLink="false">https://kylealwyn.com/2016-09-09-writing-pure-functions-javascript/</guid><pubDate>Fri, 09 Sep 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I’ve been perusing through Robert C. Martin’s book, &lt;a href=&quot;https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&quot;&gt;Clean Code&lt;/a&gt; and I wanted to document my takeaways from the chapter on functions. Although most of the book is tailored around the Java (in no way related to Javascript) programming language, some of the paradigms run true for any functional language.&lt;/p&gt;
+&lt;p&gt;One of the core concepts explored in this chapter can be summed up by the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Functions should do one thing. They should do it well. They should do it only.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We should strive for a codebase full of single-purpose functions. This largely why modular systems such as CommonJS or RequireJS have risen in popularity; we create modules that do one thing really, really well and are then able to use it anywhere and know exactly what to expect.&lt;/p&gt;
+&lt;p&gt;Front end javascript frameworks such as Angular 2 and React have adopted the idea of components rather than pages and controllers. Systems we now build are composed of many components; these components can be transferred from system to system and replicate their functionality as long as they are provided the correct inputs.&lt;/p&gt;
+&lt;p&gt;The bit about frameworks may seem a bit tangiential to the topic of this article, but the basis of these frameworks are functions; functions that are taking in inputs and outputting something different based on the input. With this is mind, let’s dive into some basic rules to follow when writing pure functions.&lt;/p&gt;
+&lt;h2&gt;Use descriptive names&lt;/h2&gt;
+&lt;p&gt;A long, descriptive name is better than a short, ambiguous name. You should be &lt;a href=&quot;https://github.com/mishoo/UglifyJS&quot;&gt;uglifying&lt;/a&gt; your code for production anyways, so you do not have to worry about bloating your codebase with longer names. Trust me, you’ll thank yourself later.&lt;/p&gt;
+&lt;p&gt;Names may also depend upon the returned output of the function. For example, if we are returning a boolean, we can prefix the function with &lt;code class=&quot;language-text&quot;&gt;is&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;has&lt;/code&gt;. When reading an example like &lt;code class=&quot;language-text&quot;&gt;campaign.hasStarted()&lt;/code&gt;, we already understand what object type this method will return and we can determine the meaning of the return value has without actually looking at the internals of the method.&lt;/p&gt;
+&lt;h2&gt;Don’t manipulate arguments&lt;/h2&gt;
+&lt;p&gt;Pure functions do not manipulate arguments. Rather, a function should decidedly mutate a copy of the object and return the copy, leaving the source object intact in case the original needs further processing.&lt;/p&gt;
+&lt;p&gt;If running mutable methods within a function, do your best to make a local copy of the object before mutating or somehow signal in the name that this function is destructive. Ruby does a good job of this by allowing you to add a bang to the end of the method, signaling that the method is destructive.&lt;/p&gt;
+&lt;h2&gt;No side effects&lt;/h2&gt;
+&lt;p&gt;A pure function Has no side effects. Once again, the function does one thing, one thing well, and one thing only. Is that getting old yet? &lt;em&gt;Good&lt;/em&gt;. They should not manipulate global variables and should not manipulate any arguments. If they do, the function has hidden meaning and functionality, and in turn we cannot truly predict what the function will output because of it’s dependency on the environment. Bulletproof functions should produce the same output given the same input every single time.&lt;/p&gt;
+&lt;p&gt;Functions with side effects also produce temporal couplings and/or &lt;a href=&quot;http://searchstorage.techtarget.com/definition/race-condition&quot;&gt;race conditions&lt;/a&gt;. A race condition means &lt;em&gt;this must be done before that, and that must be done before this, otherwise it won’t work&lt;/em&gt;. Race conditions can be devastating for an application, especially on the web, where the language is not compiled before runtime and we cannot predict where our user’s exact entry point or current state will be (logging back into an application, moving backwards or forwards in history).&lt;/p&gt;
+&lt;h2&gt;Do throw exceptions&lt;/h2&gt;
+&lt;p&gt;Throw exceptions when they are encountered rather than returning the error from the function. If we have encountered an issue with our program during runtime, we should not allow the business logic to continue in hopes that the error will eventually be caught and handled. The program must immediately respond by throwing an exception. It is useful to have some sort of global error handler that can gracefully handle errors when encountered.&lt;/p&gt;
+&lt;h2&gt;No flag arguments&lt;/h2&gt;
+&lt;p&gt;A flag argument is a boolean value that says if this, do that, if that, do this. As soon as you use a flag argument, you violate the single purpose principle. This one is short and simple. Don’t do it.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;These aren’t the only guidelines to follow for writing pure functions but these concepts provide a solid foundation for the topic and explore some of the shortcomings of using non-pure functions in a runtime language.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Custom Fonts with React Native]]></title><description><![CDATA[After building an analytics dashboard for  Lemonaid Health  with React/Redux, I felt ready to dive into some native programming with React…]]></description><link>https://kylealwyn.com/2016-08-25-custom-fonts-with-react-native/</link><guid isPermaLink="false">https://kylealwyn.com/2016-08-25-custom-fonts-with-react-native/</guid><pubDate>Thu, 25 Aug 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;After building an analytics dashboard for &lt;a href=&quot;https://lemonaidhealth.com&quot;&gt;Lemonaid Health&lt;/a&gt; with React/Redux, I felt ready to dive into some native programming with React Native. As with any custom project, you’ll probably want to add some custom fonts to brand the app or give it some sex appeal. After some googling around, I found &lt;a href=&quot;https://github.com/rnpm/rnpm&quot;&gt;RNPM&lt;/a&gt; (React Native Package Manager) which makes the process a breeze.&lt;/p&gt;
+&lt;h2&gt;Add your custom assets to the project&lt;/h2&gt;
+&lt;p&gt;The first step is to add your custom assets to your project directory. I put all my custom code into a &lt;code class=&quot;language-text&quot;&gt;source&lt;/code&gt; folder at the root of the project directory. Within &lt;code class=&quot;language-text&quot;&gt;source&lt;/code&gt;, I have an &lt;code class=&quot;language-text&quot;&gt;assets&lt;/code&gt; folder which will contain any static assets such as my fonts, images, etc.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;react-native-app
+│   README.md
+│   index.ios.js
+│   index.android.js
+└── ios
+└── android
+└── source
+│   │
+│   └── components
+│   │
+│   └── assets
+│       └── fonts
+│            └── Custom fonts go here&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Install RNPM&lt;/h2&gt;
+&lt;p&gt;First, you will need to install RNPM globally&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ npm install -g rnpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once installed, we need to add some meta data to our &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file. This tells &lt;code class=&quot;language-text&quot;&gt;rnpm&lt;/code&gt; where our asset directory lives.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;rnpm&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;assets&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&quot;source/assets/fonts&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Link Assets&lt;/h2&gt;
+&lt;p&gt;Now that &lt;code class=&quot;language-text&quot;&gt;rnpm&lt;/code&gt; knows where our assets live, we can link our assets through the command line.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ rnpm link assets&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will &lt;em&gt;automagically&lt;/em&gt; add our assets to both our android and ios distributions.&lt;/p&gt;
+&lt;h2&gt;Using the Fonts&lt;/h2&gt;
+&lt;p&gt;Once we have our assets linked up, we can now use the fonts in our application. You must use the exact filename when referencing the font within your javascript.&lt;/p&gt;
+&lt;p&gt;In this example, lets assume we have a file in our font directory named &lt;code class=&quot;language-text&quot;&gt;ProximaNova-Bold.ttf&lt;/code&gt; and have already linked the assets.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Text&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; StyleSheet &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-native&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; styles &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; StyleSheet&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  text&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    fontFamily&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ProximaNova-Bold&apos;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CustomFontTest&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Text style&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We should be able to see our custom font in our app now!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Airdrop Not Working?]]></title><description><![CDATA[The Problem Occasionally, my iPhone refuses to find my macbook when attempting to connect with Airdrop. I’ve searched high and low for a…]]></description><link>https://kylealwyn.com/2016-08-10-airdrop-not-working/</link><guid isPermaLink="false">https://kylealwyn.com/2016-08-10-airdrop-not-working/</guid><pubDate>Wed, 10 Aug 2016 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;Occasionally, my iPhone refuses to find my macbook when attempting to connect with Airdrop. I’ve searched high and low for a solution, and until recently I have had to restart my computer in order for the two to gracefully connect. Until now…&lt;/p&gt;
+&lt;h2&gt;The Fix&lt;/h2&gt;
+&lt;p&gt;Wait for it… just open your bluetooth preferences. Click the bluetooth icon on the right side of your Macbook menu bar and select &lt;em&gt;“Open Bluetooth Preferences”&lt;/em&gt;. Wait for the menu to open, give your phone a couple seconds, and &lt;em&gt;voila&lt;/em&gt;, connection at long last.&lt;/p&gt;
+&lt;h2&gt;The source&lt;/h2&gt;
+&lt;p&gt;Thanks to Sajad Amirsardari’s comment on this &lt;a href=&quot;http://www.expertreviews.co.uk/mobile-phones/1402591/airdrop-doesnt-work-how-to-fix-airdrop-between-macs-iphones-and-ipads&quot;&gt;post&lt;/a&gt; for the solution.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Best ES6 Features]]></title><description><![CDATA[Javascript is an everchanging language. Each new spec released comes with a myriad of new features, as well as condemning some of the old…]]></description><link>https://kylealwyn.com/2016-06-15-top-new-es6-features/</link><guid isPermaLink="false">https://kylealwyn.com/2016-06-15-top-new-es6-features/</guid><pubDate>Wed, 15 Jun 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Javascript is an everchanging language. Each new spec released comes with a myriad of new features, as well as condemning some of the old paradigms we’ve come to know and love. We’ve learned to use frameworks and libraries to get around the shortcomings of the language, and many have started their education not learning the javascript language itself, but rather a widely used abstraction layer that will get replaced as the hottest new &lt;code class=&quot;language-text&quot;&gt;xyz&lt;/code&gt; toy comes along.&lt;/p&gt;
+&lt;p&gt;The ES6 spec has taken a huge step in the right direction as javascript evolves into a more advanced language with aspects pulled from more tenured object oriented languages.&lt;/p&gt;
+&lt;p&gt;I’d like to delve into a few of the most awesome features I’ve found useful in my daily javascript programming.&lt;/p&gt;
+&lt;h2&gt;Blocks&lt;/h2&gt;
+&lt;p&gt;We used to create closures by using Immediately Invoked Function Expressions (&lt;a href=&quot;http://benalman.com/news/2010/11/immediately-invoked-function-expression/&quot;&gt;IIFE&lt;/a&gt;). With ES6, we can now create blocks which maintain their own scope.&lt;/p&gt;
+&lt;h3&gt;Before&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;iife&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; scopedVar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;hello world&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scopedVar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// output: &apos;hello world&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scopedVar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// output: undefined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;After&lt;/h3&gt;
+&lt;p&gt;Notice the use of &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; instead of &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt;. This is a new keyword in the ES6 spec that declares a block scope local variable.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; scopedVar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;hello world&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scopedVar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// output: &apos;hello world&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scopedVar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// output: undefined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Object Literals&lt;/h2&gt;
+&lt;p&gt;ES6 allows declaring object literals by providing shorthand syntax for initializing properties from variables and defining function methods. It also enables the ability to have computed property keys in an object literal definition.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getCar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;make&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; model&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// with property value shorthand&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// syntax, you can omit the property&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// value if key matches variable&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// name&lt;/span&gt;
+    make&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;// same as make: make&lt;/span&gt;
+    model&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// same as model: model&lt;/span&gt;
+    value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// same as value: value&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// computed values now work with&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// object literals&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;make&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; make&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// Method definition shorthand syntax&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// omits `function` keyword &amp;amp; colon&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;depreciate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; car &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getCar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Kia&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Sorento&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;car&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;makeKia&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Object Destructuring&lt;/h2&gt;
+&lt;p&gt;Before object destructuring, we used to need temporary variables into to store and unwrap particular key-value pairs in an object.&lt;/p&gt;
+&lt;h3&gt;Before&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Arrays&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; arr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; two &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;two&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 2&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Objects&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  one&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  two&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  three&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; two &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;one&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;two&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We now have a shortcut to pluck and assign values to variables directly from arrays and objects themselves;&lt;/p&gt;
+&lt;h3&gt;After&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Arrays&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; arr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;one&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; two&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; three&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;two&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 2&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Objects&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  one&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  two&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  three&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; two &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; obj&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;two&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 2&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// You can even assign an alias to the new variable to make it more semantic&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; two&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; numberTwo &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;numberTwo&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Destructuring is incredibly useful when you only need to work with particular keys out of an object. It also proves to be very useful when receiving parameters in a function.&lt;/p&gt;
+&lt;h2&gt;Arrow Functions&lt;/h2&gt;
+&lt;p&gt;Scope is one of the more difficult &lt;em&gt;concepts&lt;/em&gt; to grasp when first starting out with javascript. Identifying the current scope and maintaining reference to your desired scope was always a pain. ES6 helps mitigate these issues with arrow functions. Arrow functions inherit the the outer scope, removing the need for us to shadow the outer scope with a temporary variable.&lt;/p&gt;
+&lt;h3&gt;Before&lt;/h3&gt;
+&lt;p&gt;Seen below, the function passed to set timeout will create a new scope when executed, binding to a new lexical &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;. We need the &lt;code class=&quot;language-text&quot;&gt;_this&lt;/code&gt; to maintain a reference to the outer scope containing our age.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; _this &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: undefined&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;_this&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 5&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; p &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;After&lt;/h3&gt;
+&lt;p&gt;Using an arrow function will inherit the current scope.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; age
+
+  &lt;span class=&quot;token function&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 5&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; p &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Arrow functions come with a few other nifty features that I’ve found to increase the efficiency of my programming.&lt;/p&gt;
+&lt;h3&gt;Single Arguments&lt;/h3&gt;
+&lt;p&gt;If passing a single argument to an arrow function, parentheses are not required.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; arr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;arr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; val&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: [2, 4, 6]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Destructuring Arguments&lt;/h3&gt;
+&lt;p&gt;Stemming off the prior section on destrucuring objects, you may also do this when receiving parameters in a function. Although I’m using arrow functions here, you may also destructure parameters while using vanilla functions.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Mimicking a reducer in the Redux library&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;reducer&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: &apos;CREATE_POST&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Some global dispatch function&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  type&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;CREATE_POST&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Default Parameters&lt;/h2&gt;
+&lt;p&gt;Previously, setting default parameters was a verbose and tedious process. We can now assign defaults directly when receiving the argument.&lt;/p&gt;
+&lt;h3&gt;Before&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  y &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; y &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;After&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Template Literals&lt;/h2&gt;
+&lt;p&gt;Concatenating strings was honestly the worst. It was a mish mash of apostrophes and plus signs garbled together to form something that sort of looked like a string. In comes back ticks, the new syntax to define a template literal. They can span multiple lines, removing the myriad of workarounds for multi line string definition and provide easy to read string interpolation&lt;/p&gt;
+&lt;h3&gt;Before&lt;/h3&gt;
+&lt;p&gt;This syntax is unreadable and hard to maintain, especially when creating extremely dynamic strings.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Plus operator&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; multiLinePlus &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;This is supposed to be a &apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;token string&quot;&gt;&apos;multi line string &apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;token string&quot;&gt;&apos;and I usually forget the plus operator &apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;token string&quot;&gt;&apos;which results in an error&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Array + Join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; multiLineArray &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&apos;This is a multi line string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&apos;And I will join these strings together&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&apos;Using the join method with a space as the delimiter&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// With a variable&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Kyle&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; stringWithVar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Hello &apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;, how are you doing?&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;After&lt;/h3&gt;
+&lt;p&gt;Template literals are a godsend for dynamic strings and HTML templates generated on the fly.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Kyle&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; multiLine &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  Ah I can write as mine lines as I want without
+  having to add any extra characters to join my strings.
+  And string interpolation is so easy. I just need to use dollar sign + braces
+  to insert a variable into my string. Who let the dogs out?
+  &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;name&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; did.
+`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;The For-Of loop&lt;/h2&gt;
+&lt;p&gt;Es6 provides a new way for us to iterate over arrays. This combines the power of the original for loop and the forEach Array prototype method. This gives us the current element on each iteration without using an accessor while still allowing us to break out of the loop when necessary.&lt;/p&gt;
+&lt;h3&gt;Before&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; arr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// For Loop&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;arr&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 1, 2, 3&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Native forEach method&lt;/span&gt;
+arr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; key&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;key&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;val&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 0: 1, 1: 2, 2: 3&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;After&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; arr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; elem &lt;span class=&quot;token keyword&quot;&gt;of&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;elem&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 1, 2, 3&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Obtaining the keys of the object as well&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; val&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;of&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;key&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;val&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Output: 0: 1, 1: 2, 2: 3&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[How to setup an Ubuntu server]]></title><description><![CDATA[Let’s face it. It can be overwhelming starting at a blank terminal thinking of how to initially get our server going. I’ve been playing…]]></description><link>https://kylealwyn.com/2016-05-29-setting-up-an-ubuntu-server/</link><guid isPermaLink="false">https://kylealwyn.com/2016-05-29-setting-up-an-ubuntu-server/</guid><pubDate>Sun, 29 May 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Let’s face it. It can be overwhelming starting at a blank terminal thinking of how to initially get our server going. I’ve been playing around with servers at &lt;a href=&quot;http://digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt; and wanted to write down my workflow not only to help others, but for my reference as well. I may also use server and box synonymously.&lt;/p&gt;
+&lt;h2&gt;First Login&lt;/h2&gt;
+&lt;p&gt;There are a few simple steps to get going in the right direction after logging into the server for the first time.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Login via SSH&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ssh root@&amp;lt;ipaddr&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change root password&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;passwd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a new user&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;adduser &amp;lt;newuser&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Give user sudo access&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;gpasswd -a &amp;lt;newuser&amp;gt; sudo&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Add Public/Private Key Authentication&lt;/h2&gt;
+&lt;p&gt;Next, it’s time to set up SSH logins. It’s tedious to have to input our password everytime we log into our box, so let’s get rid of that step.&lt;/p&gt;
+&lt;p&gt;First, on your local machine, we’ll need to generate an RSA public and private key. You may skip this if you already have a generated key.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# Generate our RSA key and go through the steps. Default path is fine and I recommend no password
+$ ssh-keygen -t rsa
+
+# Print out our new public key so we can copy
+$ cat ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let’s log back into our server as the root user and configure the user we created in the previous section to accept our newly generated key as a login.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# On server as root, enter in new user’s shell
+$ su - &amp;lt;newuser&amp;gt;
+
+# Now create the ssh directory in the new users home directory
+$ cd ~
+$ mkdir .ssh
+$ chmod -R 700 .ssh
+$ vim .ssh/authorized_keys
+# Paste in public key
+$ chmod 600 .ssh/authorized_keys
+$ exit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sweet. Now we should be able to login directly to our server without having to input our password. Try it out to verify.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# Back on local machine
+$ ssh &amp;lt;newuser&amp;gt;@&amp;lt;ipaddr&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Securing SSH&lt;/h2&gt;
+&lt;p&gt;Now that we can login directly to our server using SSH, we will want to make SSH a bit more secure to prevent any breaches. Some security experts recommend to change the SSH port off of 22, as this is the most common port that hackers use to try and brute force their way into your server. We also disallow the root user from logging in remotely to the server as we do not want anyone unwarranted with super capabilities. We may also choose to restrict which users are allowed to SSH into the box, but that’s up to you.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# Back on local machine
+# Open up etc/ssh/sshd_config
+Port &amp;lt;portno&amp;gt;
+PermitRootLogin no
+...
+UseDNS no
+AllowUsers &amp;lt;newuser&amp;gt;
+
+# Back in the shell, we need to restart ssh using one of the following commands
+# depending on your environment. Sudo may also need to be used.
+reload ssh or service ssh restart
+
+# Check to see whether new settings work
+ssh -p &amp;lt;portno&amp;gt; &amp;lt;newuser&amp;gt;@&amp;lt;ipaddr&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Firewall&lt;/h2&gt;
+&lt;p&gt;To be extra secure, we may want to setup a firewall to restrict our server’s port access.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ apt-get install ufw
+$ ufw logging low
+$ ufw limit &amp;lt;portno&amp;gt;/tcp #ssh
+$ ufw allow 25/tcp       #mail
+$ ufw allow 80/tcp       #http
+$ ufw allow 443/tcp      #https
+$ ufw enable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Installing Ruby&lt;/h2&gt;
+&lt;p&gt;We are going to use &lt;a href=&quot;http://rvm.io&quot;&gt;RVM&lt;/a&gt; to manage our Ruby installation. Run the following commands to get RVM onto our machine&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# You may optionally append &amp;#39;-s stable --rails&amp;#39; to the second command install rails simultaneously
+$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+$ curl -sSL https://get.rvm.io | bash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will append a couple lines to source RMV scripts upon shell login and we should be good to go! The script will install the latest stable version of ruby. Let’s verify ruby was installed successfully and check our ruby version.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ ruby -v
+# ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nice, Ruby and Ruby on Rails (if you installed rails as well) are up and running on our machine.&lt;/p&gt;
+&lt;h2&gt;Installing Node&lt;/h2&gt;
+&lt;p&gt;We’ll use &lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;NVM&lt;/a&gt; (Node Version Manager) to install and manage NodeJs on our server.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# Always start by updating our packages
+$ apt-get update
+
+# Next, we&amp;#39;ll install two necessary libraries for nvm to run properly.
+$ apt-get install build-essential libssl-dev
+
+# Finally, we&amp;#39;ll install NVM using curl
+$ curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Make sure to restart your terminal or source your profile after installation to load NVM initially. 0.31.0 is the current version at the time of writing this, but you may replace it with whatever the current version is. You may find this by visiting the &lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;NVM&lt;/a&gt; repo on Github. This will append a few lines to your user profile that will automatically source NVM on login. We can now install Node on our Machine!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ nvm --version
+# 0.31.0
+
+# Install the latest stable version of Node
+$ nvm install 5.0.0
+
+$ node -v
+# v5.0.0
+
+$ npm -v
+# 3.3.6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Boom! We now have &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node&lt;/a&gt; and &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;NPM&lt;/a&gt; installed and running on our system. We can now install any Node packages we want such as pm2 for Node app deployment by running &lt;code class=&quot;language-text&quot;&gt;npm install -g pm2.&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Nginx&lt;/h2&gt;
+&lt;p&gt;First, install nginx from apt-get&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ apt-get update
+$ apt-get install nginx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That was easy. Go ahead and navigate to your IP address in the browser or a REST client such as Postman and you should see a welcome page.&lt;/p&gt;
+&lt;h2&gt;MongoDB&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[How to use Sass maps]]></title><description><![CDATA[Apart from frameworks, I’ve seen Sass maps used very little in production code bases. Sass maps allow you to define a variable containing…]]></description><link>https://kylealwyn.com/2016-04-26-using-sass-maps/</link><guid isPermaLink="false">https://kylealwyn.com/2016-04-26-using-sass-maps/</guid><pubDate>Tue, 26 Apr 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Apart from frameworks, I’ve seen Sass maps used very little in production code bases. Sass maps allow you to define a variable containing key-value pairs. You can then loop through the map to generate generic code or reference the map somewhere else in your sass code. First, let’s take a look at how to define a map:&lt;/p&gt;
+&lt;h2&gt;Defining A Map&lt;/h2&gt;
+&lt;p&gt;What if we just wanted to have a simple color map defining our palette?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Primary colors for use within our application&lt;/span&gt;
+&lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$colors&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #e74c3c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #3498db&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;purple&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #9b59b6&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;turquoise&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #1abc9c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #2ecc71&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;midnight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #34495e
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Accessing The Map&lt;/h2&gt;
+&lt;p&gt;Great, now we have our map defined, but how do we use the dang thing? We’ll need to use a Sass built-in &lt;code class=&quot;language-text&quot;&gt;map-get&lt;/code&gt; in order to access the map. &lt;code class=&quot;language-text&quot;&gt;map-get&lt;/code&gt; takes in two arguments: the map we are looking up and the key we want the value for.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Using our predefined $colors map above ^&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;.btn-primary &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$colors&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; red&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Other Map Uses&lt;/h2&gt;
+&lt;p&gt;Some may stop there and start using maps right away as this provides nice organization to our variables in semantic namespaces. We can go even further and use the maps to their full potential by looping through them. We will use several powerful features of sass: &lt;em&gt;placeholders&lt;/em&gt;, &lt;em&gt;each loops&lt;/em&gt;, and of course &lt;em&gt;maps&lt;/em&gt;. Let’s check it out&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Defining our map&lt;/span&gt;
+&lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$colors&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #e74c3c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #3498db&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;purple&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #9b59b6&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;turquoise&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #1abc9c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #2ecc71&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;midnight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #34495e
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Defining our default button style&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token placeholder&quot;&gt;%button&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 2px 7px &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;black&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0.17&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; white&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8px 12px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; relative&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 250ms&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; uppercase&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Looping through our color map&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// The each loop will provide both the key and value to it&apos;s scope&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;@each&lt;/span&gt; &lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;, &lt;span class=&quot;token variable&quot;&gt;$hex&lt;/span&gt; in &lt;span class=&quot;token variable&quot;&gt;$colors&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token selector&quot;&gt;.button--&lt;span class=&quot;token variable&quot;&gt;#{$color}&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// Extend our default style&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;@extend&lt;/span&gt; &lt;span class=&quot;token placeholder selector&quot;&gt;%button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// Set the background to our defined hex color in our map&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$hex&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sweet! We now have stylish buttons for all colors in our color map. The generated CSS would like something like this&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.button--red, .button--blue, .button--purple, .button--turquoise, .button--green, .button--midnight&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 2px 7px &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0.17&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; white&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Lato&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;outline&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8px 12px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; relative&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 250ms&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; uppercase&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.button--red:hover, .button--blue:hover, .button--purple:hover, .button--turquoise:hover, .button--green:hover, .button--midnight:hover&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 6px 10px &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0.36&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.button--red&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #e74c3c&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;.button--red:hover&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #d62c1a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, in order to add a button, all we need to do is add one more color to our colors map and the loop will dynamically generate a new button. Let’s see it in action.&lt;/p&gt;
+&lt;p data-height=&quot;266&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;zrBJyx&quot; data-default-tab=&quot;result&quot; data-user=&quot;kalwyn&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/kalwyn/pen/zrBJyx/&quot;&gt;Easy buttons with sass map&lt;/a&gt; by Kyle (&lt;a href=&quot;http://codepen.io/kalwyn&quot;&gt;@kalwyn&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;If you want to learn more about Sass and its awesome features, visit the &lt;a href=&quot;http://sass-lang.com/&quot;&gt;website&lt;/a&gt;. Cheers!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to add footnotes in Markdown]]></title><description><![CDATA[I’ve decided to start adding sources to my posts to give credit where credit is due  1 . The solution is simple but wanted to document in…]]></description><link>https://kylealwyn.com/2016-04-20-adding-footnotes-in-markdown/</link><guid isPermaLink="false">https://kylealwyn.com/2016-04-20-adding-footnotes-in-markdown/</guid><pubDate>Wed, 20 Apr 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I’ve decided to start adding sources to my posts to give credit where credit is due &lt;sup id=&quot;a1&quot;&gt;&lt;a href=&quot;#f1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. The solution is simple but wanted to document in case anybody else needs a surefire solution.&lt;/p&gt;
+&lt;p&gt;First, we will need to create the superscripted link in the main content. The id of the superscript element will be used to link back to the section of the article from the footnotes, while the href value of the text will link down to the correlated footnote.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;sup&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;a1&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;[1](#f1)&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;sup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, we need the referenced footnote in place. Note the id of the &lt;em&gt;strong&lt;/em&gt; element matches the id of the superscript link above. We also have a return link that will direct the user to the place in the article where the reference link was placed.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;strong&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;f1&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;1&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; Test Footnote. [↩](#a1)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I’ve placed an example in the first paragraph of this article to demonstrate our new footnotes! Good luck and happy sourcing.&lt;/p&gt;
+&lt;h3&gt;Sources&lt;/h3&gt;
+&lt;p&gt;&lt;strong id=&quot;f1&quot;&gt;1&lt;/strong&gt; Stack Overflow post that aided this solution. &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to track object changes in Javascript]]></title><description><![CDATA[Recently, I needed a good way to find out exactly what had changed between two objects in an Angular application. Soooo, I wrote one. As an…]]></description><link>https://kylealwyn.com/2016-04-07-finding-differences-in-javascript-objects/</link><guid isPermaLink="false">https://kylealwyn.com/2016-04-07-finding-differences-in-javascript-objects/</guid><pubDate>Thu, 07 Apr 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Recently, I needed a good way to find out exactly what had changed between two objects in an Angular application. Soooo, I wrote one.&lt;/p&gt;
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;BKJYRN&quot; data-default-tab=&quot;result&quot; data-user=&quot;kalwyn&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/kalwyn/pen/BKJYRN/&quot;&gt;BKJYRN&lt;/a&gt; by Kyle (&lt;a href=&quot;http://codepen.io/kalwyn&quot;&gt;@kalwyn&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;As an example scenario, let’s say we are editing a post. We load our page and pull down our post from the server. We make an initial copy of the and append another copy to our view. A user will edit a couple of values, e.g. the title and the description. At this point, I only want to send to the server the updated values rather than the entire post object, so I’d like to find the difference between the view-bound object and our original copy.&lt;/p&gt;
+&lt;p&gt;All we need to do is run the two objects through the below function and we will be returned an object consisting only of differing key-value pairs! It works for deeply nested objects as well, something I found lacking in most Stack Overflow posts. Our only dependency is the &lt;a href=&quot;http://lodash.com/docs&quot;&gt;lodash&lt;/a&gt; library. Lodash is full of useful javascript helpers that make day to day programming much simpler. Why reinvent the wheel when you have open source?&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/alwynsays/f8e0a03d836f2923de9f83744cf45d09.js&quot;&gt;&lt;/script&gt;</content:encoded></item><item><title><![CDATA[Getting Started With SQL]]></title><description><![CDATA[After working on the front end of apps for a few years, I’ve decided to take a deeper dive into the data that I’m displaying. What better…]]></description><link>https://kylealwyn.com/2016-03-20-getting-started-with-SQL/</link><guid isPermaLink="false">https://kylealwyn.com/2016-03-20-getting-started-with-SQL/</guid><pubDate>Sun, 20 Mar 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;After working on the front end of apps for a few years, I’ve decided to take a deeper dive into the data that I’m displaying. What better way to learn then to learn the language widely used to insert and retrieve the information directly from the databases.&lt;/p&gt;
+&lt;p&gt;SQL revolves around databases, tables, columns and rows. These are our staple keywords.&lt;/p&gt;
+&lt;h2&gt;Queries&lt;/h2&gt;
+&lt;p&gt;Queries are the bread and butter of SQL. Queries are essentially what the language was designed for: retrieving data from a database.&lt;/p&gt;
+&lt;h3&gt;Select&lt;/h3&gt;
+&lt;p&gt;All queries begin with a SELECT clause. This tells the database engine what information (columns in this case) you want returned in your results.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The asterisk means to return all columns from the chosen table. Therefore the previous query can be translated to, &lt;strong&gt;“Select all columns from the movies table.”&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Distinct&lt;/h3&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;DISTINCT&lt;/code&gt; clause is used return only unique values in the results set and filters out all duplicate values.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;DISTINCT&lt;/span&gt; genre &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Where&lt;/h3&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;WHERE&lt;/code&gt; clause allows you to filter the results to include only rows where a specified condition is true.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; rating &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will only return rows from the movies table where the rating column is greater than 8.&lt;/p&gt;
+&lt;h3&gt;Like&lt;/h3&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;LIKE&lt;/code&gt; clause is useful when comparing similar values. It is typically used in conjunction with the &lt;code class=&quot;language-text&quot;&gt;WHERE&lt;/code&gt; caluse to search for a specific pattern within a column.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Spiderman&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This query will return any rows that have exactly ‘Spiderman’ in the name column. Sometimes, however, we don’t want to specify the exact matcher but would rather have an encompassing pattern. This is where we may use &lt;em&gt;special characters&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;_&lt;/code&gt; is used to allow substitution of any individual character. If we have LIKE ‘se_ven’ this will watch with ‘seven’ and ‘se7en’.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;%&lt;/code&gt; is a wildcard that matches zero or more missing letters. If we have LIKE ’S%’, this will match ‘Spiderman’ and ‘Superman’ as they both begin with the letter ’s’.&lt;/p&gt;
+&lt;h3&gt;Between&lt;/h3&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;BETWEEN&lt;/code&gt; clause is used to filter the result to a certain range. Values can be numbers text or dates.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;A&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;J&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;year&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1990&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Order By&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ORDER BY&lt;/code&gt; is used to sort the results of the query either alphabetically or numerically.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies
+&lt;span class=&quot;token keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; rating &lt;span class=&quot;token keyword&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;DESC is a keyword used to sort the results in descending order (high to low or Z-A). Use ASC to do the inverse (low to high or A-Z).&lt;/p&gt;
+&lt;h3&gt;Limit&lt;/h3&gt;
+&lt;p&gt;Some tables have thousands of rows but we may only want a small chunk of the records. For this, we use the &lt;code class=&quot;language-text&quot;&gt;LIMIT&lt;/code&gt; clause.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; movies
+&lt;span class=&quot;token keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; imdb_rating &lt;span class=&quot;token keyword&quot;&gt;DESC&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Aggregate Functions&lt;/h2&gt;
+&lt;p&gt;Now that we have taken a brief look at the basics of forming a SQL query, let’s take a look at some more advanced and useful queries. Aggregate functions will give us additional functionality in building our queries. They work by taking in a parameter (typically a column name) and acting upon it.&lt;/p&gt;
+&lt;h3&gt;Count&lt;/h3&gt;
+&lt;p&gt;Sometimes, we only desire to know how many rows exist for a query. We can use &lt;code class=&quot;language-text&quot;&gt;COUNT&lt;/code&gt; to retrieve this for us.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can even run our filtering clauses on the count&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; downloads &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Group By&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;GROUP BY&lt;/code&gt; is a clause in SQL that is only used with aggregate functions. It is used in collaboration with the &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt; statement to arrange identical data into groups.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; downloads &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20000&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; price&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Sum&lt;/h3&gt;
+&lt;p&gt;We can easily add all the values for a particular column using the SUM clause&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;downloads&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Max&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;MAX&lt;/code&gt; returns the largest value in a column. It takes the name of the column as a parameter.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;downloads&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This query returns the names of the most downloaded apps in each category&lt;/p&gt;
+&lt;h3&gt;Min&lt;/h3&gt;
+&lt;p&gt;Like you’d expect, the MIN clause performs the inverse of the MAX clause. It will return the smallest value of the column passed as an argument.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MIN&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;downloads&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; category&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Avg&lt;/h3&gt;
+&lt;p&gt;Use the AVG clause to calculate the average of a particular column. This will return a number and for obvious reasons will not work properly on TEXT fields&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; price&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;downloads&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; price&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Round&lt;/h3&gt;
+&lt;p&gt;ROUND() is a function that takes a column name and an integer as an argument. It rounds the values in the column to the number of decimal places specified by the integer. Here, we pass the column AVG(downloads) and 2 as arguments. SQL first calculates the average for each price and then rounds the result to two decimal places in the result set.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; price&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ROUND&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;downloads&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; fake_apps
+&lt;span class=&quot;token keyword&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; price&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Working With Multiple Tables&lt;/h2&gt;
+&lt;h3&gt;Primary Keys&lt;/h3&gt;
+&lt;p&gt;A primary key serves as a unique identifier for each row or record in a given table. The primary key is literally an id value for a record. We’re going to use this value to connect artists to the albums they have produced.&lt;/p&gt;
+&lt;p&gt;By specifying that the id column is the PRIMARY KEY, SQL makes sure that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;None of the values in this column are NULL&lt;/li&gt;
+&lt;li&gt;Each value in this column is unique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A table can not have more than one PRIMARY KEY column.&lt;/p&gt;
+&lt;h3&gt;Foreign Keys&lt;/h3&gt;
+&lt;p&gt;A foreign key is a column that contains the primary key of another table in the database. We use foreign keys and primary keys to connect rows in two different tables. One table’s foreign key holds the value of another table’s primary key. Unlike primary keys, foreign keys do not need to be unique and can be NULL.&lt;/p&gt;
+&lt;h3&gt;Cross Join&lt;/h3&gt;
+&lt;p&gt;One way to query multiple tables is to write a SELECT statement with multiple table names separated by a comma. This is also known as a cross join. Here, albums and artists are the different tables we are querying.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; artists&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; albums&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; artists&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Unfortunately the result of this cross join is not very useful. It combines every row of the artists table with every row of the albums table. It would be more useful to only combine the rows where the album was created by the artist.&lt;/p&gt;
+&lt;h3&gt;Inner Join&lt;/h3&gt;
+&lt;p&gt;In SQL, joins are used to combine rows from two or more tables. The most common type of join in SQL is an inner join.&lt;/p&gt;
+&lt;p&gt;An inner join will combine rows from different tables if the join condition is true. Let’s look at the syntax to see how it works.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;SELECT * specifies the columns our result set will have. Here, we want to include every column in both tables.&lt;/li&gt;
+&lt;li&gt;FROM albums specifies the first table we are querying.&lt;/li&gt;
+&lt;li&gt;JOIN artists ON specifies the type of join we are going to use as well as the name of the second table. Here, we want to do an inner join and the second table we want to query is artists.&lt;/li&gt;
+&lt;li&gt;albums.artist&lt;em&gt;id = artists.id is the join condition that describes how the two tables are related to each other. Here, SQL uses the foreign key column artist&lt;/em&gt;id in the albums table to match it with exactly one row in the artists table with the same value in the id column. We know it will only match one row in the artists table because id is the PRIMARY KEY of artists&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Left Join&lt;/h3&gt;
+&lt;p&gt;Outer joins also combine rows from two or more tables, but unlike inner joins, they do not require the join condition to be met. Instead, every row in the left table is returned in the result set, and if the join condition is not met, then NULL values are used to fill in the columns from the right table.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; albums
+&lt;span class=&quot;token keyword&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;JOIN&lt;/span&gt; artists &lt;span class=&quot;token keyword&quot;&gt;ON&lt;/span&gt;
+  albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;artist_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; artists&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The left table is simply the first table that appears in the statement. Here, the left table is albums. Likewise, the right table is the second table that appears. Here, artists is the right table.&lt;/p&gt;
+&lt;h3&gt;Aliases&lt;/h3&gt;
+&lt;p&gt;AS is a keyword in SQL that allows you to rename a column or table using an alias. The new name can be anything you want as long as you put it inside of single quotes. Here we want to rename the albums.name column as ‘Album’, and the artists.name column as ‘Artist’.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt;
+  albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name &lt;span class=&quot;token keyword&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Album&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  artists&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name &lt;span class=&quot;token keyword&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Artist&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; albums
+&lt;span class=&quot;token keyword&quot;&gt;JOIN&lt;/span&gt; artists &lt;span class=&quot;token keyword&quot;&gt;ON&lt;/span&gt;
+  albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;artist_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; artists&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; albums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;year&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1980&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It is important to note that the columns have not been renamed in either table. The aliases only appear in the result set. This does not mutate the original record stored in the database. It merely alters the appearance of the record in the data set returned by the query.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This was merely a general overview of the most basic functions SQL has to offer. While it will get the ball rolling, much more work is needed to become professionally savvy in SQL. I will write further posts about using SQL to analyze business metrics and uncover opportunities. I’ll try to link those in this post if I can remember. Cheers.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Life Hacks, Truths & Values]]></title><description><![CDATA[Take a break When a task or problem is stumping you, just take a break. The more you look at the problem, the deeper the hole you will dig…]]></description><link>https://kylealwyn.com/2016-02-11-life-hacks-truths-and-values/</link><guid isPermaLink="false">https://kylealwyn.com/2016-02-11-life-hacks-truths-and-values/</guid><pubDate>Thu, 11 Feb 2016 00:00:00 GMT</pubDate><content:encoded>&lt;div class=&quot;alert alert-warning&quot;&gt;
+  &lt;p&gt;This is an ongoing post. Keep coming back for more life hacks, truths, and values. Newest will be at the top&lt;/p&gt;
+&lt;/div&gt;
+&lt;h4&gt;Take a break&lt;/h4&gt;
+&lt;p&gt;When a task or problem is stumping you, just take a break. The more you look at the problem, the deeper the hole you will dig. It will create tunnel vision and restrict creativity. If a solution cannot be reached within an hour, step away, and let your mind wander. You will most likely find the solution immediately upon return.&lt;/p&gt;
+&lt;h4&gt;Finish off interactions&lt;/h4&gt;
+&lt;p&gt;Don’t leave people hanging. If someone is expecting a response, give them a response. Reply to that email, text or Facebook message and show that person you care about them.&lt;/p&gt;
+&lt;h4&gt;Be the first to take action&lt;/h4&gt;
+&lt;p&gt;Taking initiative in social interactions can go a long way, especially with &lt;a href=&quot;http://www.inc.com/jessica-stillman/7-ways-to-make-a-killer-first-impression.html&quot; title=&quot;How to make a good first impression&quot;&gt;first impressions&lt;/a&gt;. This displays a level of confidence and pride that people will revel in.&lt;/p&gt;
+&lt;h4&gt;Invest in yourself&lt;/h4&gt;
+&lt;p&gt;Tony Robbins, one of the greatest self development coaches, is a huge advocate of &lt;a href=&quot;http://humanelevation.tonyrobbins.com/blog/money/pay-yourself-first&quot;&gt;this mentality&lt;/a&gt;. Sure, it is great to think far off in the future, saving for retirement or being fiscally conservative, but you must reward yourself in the present. As a recent graduate, I am paying off loads of student loans, but I must also invest in myself along the way. Be smart about allocating your resources, but sometimes, it’s okay to splurge.&lt;/p&gt;
+&lt;h4&gt;Pay for quality&lt;/h4&gt;
+&lt;p&gt;I’ll admit that I was once an Amazon addict. I would find the cheapest deals on clothes, backpacks, food, etc. It feels great to get a good deal, but you’ll pay for it in the long run. It will break, tear, or not provide you with what you need.&lt;/p&gt;
+&lt;h4&gt;Constantly Learn&lt;/h4&gt;
+&lt;p&gt;Maintain a “rookie mindset.” It will help you keep an edge. The internet contains an abundance of resources to further your knowledge. It is okay to proclaim yourself an expert in certain matters, but it would be ignorant to believe you know all there is to know.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I know one thing: that I know nothing
+&lt;cite&gt;Socrates&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Read books&lt;/h4&gt;
+&lt;h4&gt;Learn how to tell a story&lt;/h4&gt;
+&lt;h4&gt;Figure out your bare necessities&lt;/h4&gt;
+&lt;p&gt;Determine your baseline of survival. Make note of the things you deem essential to your life. Once you create this master list, everything else becomes a want, not a need. It will make it easier to cut out excess in times of peril or struggle.&lt;/p&gt;
+&lt;h4&gt;Stay in touch with friends&lt;/h4&gt;
+&lt;p&gt;Life will get in the way and make it incredibly difficult to maintain friendships. This is inevitable. I urge you, however, to find the time to maintain your relationships. I’ve heard of too many elders with tragic stories of losing their friendships because they were caught up in the franticness of life.&lt;/p&gt;
+&lt;h4&gt;Make new friends&lt;/h4&gt;
+&lt;p&gt;Apart from keeping old friends, branch out and extend your social network. This does not mean hopping on Facebook and adding the first 5 people you see. Introduce yourself to someone at the grocery store or on the train ride to work. Attend a local meet up event pertaining to one of your interests. You’ll never know where these newfound relationships will take you or what doors they will open up.&lt;/p&gt;
+&lt;h4&gt;Write&lt;/h4&gt;
+&lt;p&gt;Get those thoughts out of your head. We cause ourselves unnecessary stress by trying to retain too much information. &lt;a href=&quot;http://www.amazon.com/Moleskine-Classic-Notebook-Large-Notebooks/dp/8883701127/ref=lp_1069756_1_4?s=office-products&amp;#x26;ie=UTF8&amp;#x26;qid=1456298198&amp;#x26;sr=1-4&quot; title=&quot;Moleskin Notebook&quot;&gt;Get a simple notebook&lt;/a&gt; and just write. If you’re lacking inspiration or cannot think of what to write, check out &lt;a href=&quot;http://fourhourworkweek.com/2015/01/15/morning-pages/&quot; title=&quot;Tim Ferris Morning Journal&quot;&gt;Tim Ferris’ morning journal&lt;/a&gt; or start a &lt;a href=&quot;http://greatergood.berkeley.edu/article/item/tips_for_keeping_a_gratitude_journal&quot; title=&quot;Gratitude Journal Example&quot;&gt;gratitude journal&lt;/a&gt;. Not only will this provoke your creative process, but it will relax your mind, body and soul. Give it a try!&lt;/p&gt;
+&lt;h4&gt;Write reminders&lt;/h4&gt;
+&lt;p&gt;Reminders are critical for peace of mind. Decrease your cognitive load by keeping several notepads around the house, carrying a small notebook, or using your smartphone and sync your notes to the cloud for access on all devices. These methods will relieve you of stress and in turn, make you more efficient, guaranteed.&lt;/p&gt;
+&lt;h4&gt;Keep a 20 in your car&lt;/h4&gt;
+&lt;p&gt;This &lt;strong&gt;will&lt;/strong&gt; get you out of a jam at some point. You’ll thank yourself later, trust me.&lt;/p&gt;
+&lt;h4&gt;Never be satisfied&lt;/h4&gt;
+&lt;p&gt;Enjoy what you have, but know you can attain more. I like to repeat a mantra in the mornings and before I fall asleep. It goes something like:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I am good, but I can be better. I am smart, but I can be smarter. I am strong, but I can be stronger.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This affirms your strengths, but also signals to the brain that it is not at max capacity. Do not give yourself false ceilings, for we must rise and keep rising.&lt;/p&gt;
+&lt;h4&gt;Say please and thank you&lt;/h4&gt;
+&lt;p&gt;We do not show each other enough appreciation. We’ve come to &lt;em&gt;expect&lt;/em&gt; things and have become incredibly self-centered as a race. This is largely due to the &lt;a href=&quot;http://www.bbc.co.uk/newsbeat/article/27810059/has-social-media-made-young-people-more-selfish&quot;&gt;rise of social media&lt;/a&gt; and our focus shifting to how we are represented to the world, rather than how the world should be represented to us.&lt;/p&gt;
+&lt;h4&gt;Learn how to learn&lt;/h4&gt;
+&lt;h4&gt;Focus&lt;/h4&gt;
+&lt;p&gt;Follow one course until success
+Fail until failing becomes success&lt;/p&gt;
+&lt;h4&gt;You can always make a change&lt;/h4&gt;
+&lt;p&gt;This is something my grandmother has told me since birth&lt;/p&gt;
+&lt;h4&gt;Find your burning desire&lt;/h4&gt;
+&lt;p&gt;Thomas Edison took 10,000 tries to make the light bulb a success. Michael Jordan lifted weights at 6am on game days.&lt;/p&gt;
+&lt;h4&gt;Make goals&lt;/h4&gt;
+&lt;p&gt;We need destinations. Sure, not all those who wander are lost, but the majority of the time, wouldn’t it be nice to know where you are heading? Create goals for yourself, whether it be daily, weekly, monthly, annually etc. Put what you want and desire into your subconscious and your brain will more often than not make it happen. You’ll begin to subconsciously make decisions that will bring your closer to your goals without you even knowing it. Write them down in Evernote&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to watch Factory values in Angular.js]]></title><description><![CDATA[When to use Recently, I’ve been doing a lot of http polling in my factories and services
+and I’ve needed to reflect the new data that comes…]]></description><link>https://kylealwyn.com/2015-11-12-watching-factory-values-in-angular/</link><guid isPermaLink="false">https://kylealwyn.com/2015-11-12-watching-factory-values-in-angular/</guid><pubDate>Thu, 12 Nov 2015 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;When to use&lt;/h2&gt;
+&lt;p&gt;Recently, I’ve been doing a lot of http polling in my factories and services
+and I’ve needed to reflect the new data that comes back in the call in my different templates and controllers (Yes, I’ve been asking that we move to sockets).  I’ve found two ways of achieving this:&lt;/p&gt;
+&lt;h2&gt;Method #1: $broadcast&lt;/h2&gt;
+&lt;p&gt;On Line #4, we will broadcast this data out from our factory and we can then listen for this event in our controller&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// factory.js&lt;/span&gt;
+$rootScope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$broadcast&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;data-received&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// controller.js&lt;/span&gt;
+$scope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;data-received&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// data is the object being broadcasted&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, the data we get back in our http call will be broadcasted throughout our system
+every 7.5 seconds. Cool!&lt;/p&gt;
+&lt;h2&gt;Method #2: $watch&lt;/h2&gt;
+&lt;h5&gt;The common mistake $watching a factory object&lt;/h5&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;$scope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Factory.value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;newVal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Here is your updated factory&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This piece of code won’t work properly because the Factory does not reside within
+the current controller’s scope, therefore denying access to the factory variable.&lt;/p&gt;
+&lt;h5&gt;The Fix&lt;/h5&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;$scope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Factory&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;newVal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Here is your updated factory&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Full Implementation&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; app &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; angular&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;app&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Factory&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;$rootScope&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; $interval&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    poll&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; poll&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;$interval&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; self &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Get the reference to public object&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;pingServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Setting this will trigger our watch function&lt;/span&gt;
+        $rootScope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$broadcast&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;data-received&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Calling this will send our data throughout our app&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Controller&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;$scope&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Factory&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  Factory&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Start polling our server&lt;/span&gt;
+
+  $scope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Factory&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;newVal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// We have our new data from our factory&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  $scope&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;data-received&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// We have our new data from our factory&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Either of these two ways will work, it’s just a matter of semantics. Hope this helps!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The Business Plan]]></title><description><![CDATA[I am currently enrolled in the California Program for Entrepreneurs, and we recently discussed business plans and models. I figured I would…]]></description><link>https://kylealwyn.com/2015-09-02-the-business-plan/</link><guid isPermaLink="false">https://kylealwyn.com/2015-09-02-the-business-plan/</guid><pubDate>Wed, 02 Sep 2015 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I am currently enrolled in the California Program for Entrepreneurs, and we recently discussed business plans and models. I figured I would share the business plan outline we received, and also digitize it for myself, since we received a hard copy. As I write my own, I will go through and share my thoughts on how each section should be structured and what key points should be made in each section&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Industry, the Company, and its Products&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Overview&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Company&lt;/li&gt;
+&lt;li&gt;The Company’s Products&lt;/li&gt;
+&lt;li&gt;The Industry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Critical Success Factor&lt;/li&gt;
+&lt;li&gt;Structural Analysis of the Industry&lt;/li&gt;
+&lt;li&gt;Description of Industry Evolution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Market Research &amp;#x26; Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Customer Segments, Buyer Decision Making Issues&lt;/li&gt;
+&lt;li&gt;Target Market(s) Size and Trends&lt;/li&gt;
+&lt;li&gt;Competition&lt;/li&gt;
+&lt;li&gt;Estimate Market Share &amp;#x26; Sales&lt;/li&gt;
+&lt;li&gt;Ongoing Market Evaluation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Marketing Plan&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Overall Marketing Strategy&lt;/li&gt;
+&lt;li&gt;Target Market Definition&lt;/li&gt;
+&lt;li&gt;Market Positioning (Price vs. Quality)&lt;/li&gt;
+&lt;li&gt;Competitive Advantage&lt;/li&gt;
+&lt;li&gt;Pricing (Economic Value to Customer)&lt;/li&gt;
+&lt;li&gt;Channel Plan&lt;/li&gt;
+&lt;li&gt;Marketing Communications Plan&lt;/li&gt;
+&lt;li&gt;Sales Plan to generate first six months of sales&lt;/li&gt;
+&lt;li&gt;Service &amp;#x26; Warranty Policies&lt;/li&gt;
+&lt;li&gt;Advertising &amp;#x26; Promotion Plans&lt;/li&gt;
+&lt;li&gt;Marketing Budget&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Design &amp;#x26; Development Status&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Development Status &amp;#x26; Tasks&lt;/li&gt;
+&lt;li&gt;Difficulties &amp;#x26; Risks&lt;/li&gt;
+&lt;li&gt;Product Improvement &amp;#x26; New Products&lt;/li&gt;
+&lt;li&gt;Cost Management Plan&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Operations Plan&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Geographical Location&lt;/li&gt;
+&lt;li&gt;Facilities &amp;#x26; Improvement&lt;/li&gt;
+&lt;li&gt;Strategy &amp;#x26; Plans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Management Team&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization&lt;/li&gt;
+&lt;li&gt;Key Management Personnel&lt;/li&gt;
+&lt;li&gt;Management Compensation &amp;#x26; Ownership&lt;/li&gt;
+&lt;li&gt;Board of Directors&lt;/li&gt;
+&lt;li&gt;Supporting Professional Services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Critical Risks &amp;#x26; Problems&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The Financial Plan&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Profit &amp;#x26; Loss Forecasts&lt;/li&gt;
+&lt;li&gt;Pro Forma Cash Flow Analysis&lt;/li&gt;
+&lt;li&gt;Pro Forma Balance Sheets&lt;/li&gt;
+&lt;li&gt;Break Even Analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Proposed Company Offering&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Desired Financing&lt;/li&gt;
+&lt;li&gt;Securities Offering&lt;/li&gt;
+&lt;li&gt;Capitalization&lt;/li&gt;
+&lt;li&gt;Use of Funds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Exhibit 1:&lt;/strong&gt; Pro Forma Income Statements (monthly for first year; annual for first 5 years)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exhibit 2:&lt;/strong&gt; Pro Forma Cash Flows (monthly for first year; quarterly for 2 years)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exhibit 3:&lt;/strong&gt; Pro Forma Balance Sheets (for startup &amp;#x26; for end of year for first 3 years)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exhibit 4:&lt;/strong&gt; Break Even Analysis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exhibit 5:&lt;/strong&gt; Critical Success Factors&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exhibit 6:&lt;/strong&gt; Structural Analysis of Industry&lt;/p&gt;</content:encoded></item></channel></rss>
