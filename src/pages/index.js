@@ -42,7 +42,7 @@ export default function HomePage({ data, location }) {
         </div>
 
         <div className="row">
-          <div className="col-xs-12 col-sm-6">
+          <div className="col-xs-12 col-md-6">
             <ItemList
               title="Latest Posts"
               to="/blog"
