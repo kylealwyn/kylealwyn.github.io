@@ -8,10 +8,6 @@ export default function HTML(props) {
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/prism-themes@1.1.0/themes/prism-base16-ateliersulphurpool.light.css"
-        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
