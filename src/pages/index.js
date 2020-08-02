@@ -35,7 +35,9 @@ export default function HomePage({ data, location }) {
 
           <p className="home-subtitle">I live at the intersection of science, art, and business.</p>
           <p className="home-description">
-            Co-founder <a href="https://www.heydoctor.com">@HeyDoctor</a>. Code&nbsp;
+            Co-founded <a href="https://www.heydoctor.com">@HeyDoctor</a>. Continuing to fix healthcare{' '}
+            <a href="https://www.goodrx.com">@GoodRx</a>. <br />
+            Code&nbsp;
             <a href="https://github.com/kylealwyn">@GitHub</a>. Network&nbsp;
             <a href="https://linkedin.com/in/kylealwyn">@LinkedIn</a>.
           </p>

@@ -3,6 +3,13 @@ $color-primary: #1A76D2;
 $color-background: #E9E8E3;
 $color-gray-mid: #6D7C8B;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 720px,
+  xl: 720px
+);
+
 @font-face {
   font-family: 'Circular';
   font-display: swap;

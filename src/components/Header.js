@@ -7,7 +7,7 @@ export default function Header() {
     <header className="container app-header">
       <div className="d-flex align-items-center">
         <Link to="/" aria-label="Navigate to home">
-          <img src={sig} style={{ width: 45 }} alt="Kyle Alwyn's logo" />
+          <img src={sig} style={{ width: 35 }} alt="Kyle Alwyn's logo" />
         </Link>
         <div className="ml-auto">
           <ul className="list-unstyled d-flex">
