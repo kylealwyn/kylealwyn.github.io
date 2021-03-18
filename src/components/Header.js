@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import sig from '../assets/images/signature.png';
+import sig from '../assets/images/alwyn-logo.svg';
 
 export default function Header() {
   return (

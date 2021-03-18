@@ -27,9 +27,9 @@
   margin-top: 1rem;
   &-title {
     display: inline-block;
-    background: black;
+    background: $color-body-font;
     padding: 0.25rem 0.5rem;
-    color: white;
+    color: $color-bg;
     font-size: 20px;
   }
 
@@ -46,11 +46,12 @@
     padding: 0.5rem 2rem 0.5rem 0.5rem;
     margin: 0 -0.5rem 0.5rem;
     width: 100%;
+    transition: 125ms ease-in;
 
     &:hover {
       text-decoration: none;
       color: inherit;
-      background: #fafafa;
+      background: darken($color-bg, 5%);
     }
   }
 

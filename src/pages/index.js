@@ -31,7 +31,7 @@ export default function HomePage({ data, location }) {
     <Layout location={location} title={siteTitle}>
       <div className="container">
         <div className="home-hero">
-          <h1 className="home-title">Hey, I&apos;m Kyle.</h1>
+          <h1 className="home-title">👋 I&apos;m Kyle.</h1>
 
           <p className="home-subtitle">I live at the intersection of science, art, and business.</p>
           <p className="home-description">
